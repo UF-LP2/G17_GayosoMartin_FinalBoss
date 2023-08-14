@@ -1,5 +1,12 @@
+import csv
+
 def main() -> None:
-  print("Hello World")
+ barcos = []
+ with open("ships.csv") as file:
+    reader  = csv.reader(file)
+    for row in reader:
+      barcos.append(row)
+
 
 if __name__ == "__main__":
   main()
