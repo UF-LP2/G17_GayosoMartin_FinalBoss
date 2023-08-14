@@ -6,6 +6,10 @@ def main() -> None:
     reader  = csv.reader(file)
     for row in reader:
       barcos.append(row)
+      print(barcos)
+      print(" ")
+      
+
 
 
 if __name__ == "__main__":
