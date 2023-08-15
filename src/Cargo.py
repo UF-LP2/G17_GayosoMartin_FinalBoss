@@ -2,13 +2,13 @@ from src.Ship import Ship
 
 
 class Cargo(Ship):
-    contadorCa = 0
+    
     def __init__(self, cargo, quality, draft, crew):
         Ship.__init__(self, draft, crew)
 
         self.cargo = cargo
         self.quality = quality
-        Cargo.contadorCa = Cargo.contadorCa + 1
+        
 
     def is_worth_it(self)->float:
         Final_Weight = self.draft - (self.crew * 1.5)
@@ -23,9 +23,14 @@ class Cargo(Ship):
             Final_Weight = Final_Weight - 0.5
         else:
             raise ValueError("Error de dato")
+        
+        if Final_Weight > 0:
+             print(" Weight of the Cargo: ",Final_Weight)
+        else :
+             print("CARGO Negative Weight : ",Final_Weight, "Revisar Datos Posible error ")
 
         if Final_Weight > 20:
-            print("Saqueamos el Barco")
+            print("Saqueamos el CARGO")
           
         else: 
             raise ValueError("Menor a 20, no saquear")

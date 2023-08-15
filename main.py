@@ -15,11 +15,24 @@ def main() -> None:
       try: 
         EsShip.is_worth_it()
       except ValueError as e:
-        print("No vale la pena", e)
+        print("Error: ", e)
 
     elif listaBarcos[i][0] and listaBarcos[i][1] and listaBarcos[i][2] and listaBarcos[i][3]:
       # Si tiene las cuatro columnas con datos es un Cargo
       cargo = float(listaBarcos[i][2])
+      q = float(listaBarcos[i][3])
+      draft =  float(listaBarcos[i][0])
+      crew = float(listaBarcos[i][1])
+      EsCargo = Cargo(cargo, q, draft, crew)
+      try:
+        EsCargo.is_worth_it()
+      except ValueError as e:
+        print("Error:", e)
+
+    elif listaBarcos[i][0] and listaBarcos[i][1] and not listaBarcos[i][2] and listaBarcos[i][3]:
+      # Si tiene las  columnas 0,1,3 por lo tanto tiene quality
+      # pero no tiene cargo lo tomamos como que es un Cargo
+      cargo = 0.0
       q = float(listaBarcos[i][3])
       draft =  float(listaBarcos[i][0])
       crew = float(listaBarcos[i][1])
@@ -36,11 +49,13 @@ def main() -> None:
       try:
         EsCruise.is_worth_it()
       except ValueError as e:
-        print("No vale la pena", e)
+        print("Error: ", e)
 
-  print("Cantidad de Ships vistos: ", EsShip.contadorS)
-  print("Cantidad de Cargos vistos: ", EsCargo.contadorCa)
-  print("Cantidad de Cruise vistos: ", EsCruise.contadorCr)
+    else:
+       print("Datos necesarios no proporcionados")
+
+  print("Cantidad de Barcos vistos: ", EsShip.contadorS)
+ 
   
   
 
