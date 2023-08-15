@@ -1,7 +1,7 @@
+
 from src.Ship import Ship
 from src.Cargo import Cargo
 from src.Cruise import Cruise
-
 
 def test_ship():
     cShip = Ship(4000, 300)
@@ -14,3 +14,4 @@ def test_cargo():
 def test_Cruise():
     cCruise = Cruise(10, 5000, 30)
     assert cCruise.is_worth_it() == 4932.5
+

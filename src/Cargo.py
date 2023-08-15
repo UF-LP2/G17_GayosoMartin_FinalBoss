@@ -8,7 +8,7 @@ class Cargo(Ship):
         self.cargo = cargo
         self.quality = quality
 
-    def is_worth_it(self):
+    def is_worth_it(self)->float:
         Final_Weight = self.draft - (self.crew * 1.5)
 
         if self.quality == 1:
@@ -24,3 +24,4 @@ class Cargo(Ship):
             print("Saqueamos el Barco")
         else: 
             raise ValueError("Menor a 20, no saquear")
+        return Final_Weight
