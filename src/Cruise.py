@@ -2,10 +2,13 @@ from src.Ship import Ship
 
 
 class Cruise(Ship):
-    def init(self, passengers, draft, crew):
-        Ship.init(draft, crew)
+    def __init__(self, passengers, draft, crew):
+        Ship.__init__(self, draft, crew)
         self.passengers = passengers
 
-def is_worth_it(self)-> float:
-    Final_Weight = self.draft - (self.crew * 1,5)  - (self.passengers * 2,25)
-    return Final_Weight
+    def is_worth_it(self):
+        Final_Weight = self.draft - (self.crew * 1.5)  - (self.passengers * 2.25)
+        if Final_Weight > 20:
+            print("Saqueamos el Barco")
+        else: 
+            raise ValueError("Menor a 20, no saquear")

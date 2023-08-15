@@ -1,4 +1,3 @@
-import csv
 from src.Ship import Ship
 from src.Cargo import Cargo
 from src.Cruise import Cruise
@@ -11,16 +10,32 @@ def main() -> None:
 
   for i in range(1,len(listaBarcos)):
     if listaBarcos[i][0] and listaBarcos[i][1] and not listaBarcos[i][2] and not listaBarcos[i][3]:
-      EsShip = Ship(listaBarcos[i][0],listaBarcos[i][1])
-      EsShip.saqueo()
+      EsShip = Ship(float(listaBarcos[i][0]),float(listaBarcos[i][1]))
+      try: 
+        EsShip.is_worth_it()
+      except ValueError as e:
+        print("No vale la pena", e)
 
     elif listaBarcos[i][0] and listaBarcos[i][1] and listaBarcos[i][2] and listaBarcos[i][3]:
-      EsCargo = Cargo(listaBarcos[i][2],listaBarcos[i][3],listaBarcos[i][0],listaBarcos[i][1])
-      EsCargo.saqueo()
+      cargo = float(listaBarcos[i][2])
+      q = float(listaBarcos[i][3])
+      draft =  float(listaBarcos[i][0])
+      crew = float(listaBarcos[i][1])
+      EsCargo = Cargo(cargo, q, draft, crew)
+      try:
+        EsCargo.is_worth_it()
+      except ValueError as e:
+        print("No vale la pena", e)
+      
 
     elif listaBarcos[i][0] and listaBarcos[i][1] and listaBarcos[i][2] and not listaBarcos[i][3]:
-      EsCruise = Cruise(listaBarcos[i][2],listaBarcos[i][0],listaBarcos[i][1])
-      EsCruise.saqueo()
+      EsCruise = Cruise(float(listaBarcos[i][2]),float(listaBarcos[i][0]),float(listaBarcos[i][1]))
+      try:
+        EsCruise.is_worth_it()
+      except ValueError as e:
+        print("No vale la pena", e)
 
-  if __name__ == "__main__":
-   main()
+
+
+if __name__ == "__main__":
+  main()
