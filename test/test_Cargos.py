@@ -1,4 +1,5 @@
-from src.Cargo import Cargo
+
+from src.Clasesships import Cargo
 import pytest
 
 def test_cargo():

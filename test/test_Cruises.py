@@ -1,4 +1,4 @@
-from src.Cruise import Cruise
+from src.Clasesships import Cruise
 import pytest
 
 

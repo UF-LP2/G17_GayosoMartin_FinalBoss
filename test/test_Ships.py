@@ -1,6 +1,5 @@
 import pytest
-
-from src.Ship import Ship
+from src.Clasesships import Ship
 
 
 

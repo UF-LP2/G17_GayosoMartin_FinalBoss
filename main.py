@@ -1,6 +1,6 @@
-from src.Ship import Ship
-from src.Cargo import Cargo
-from src.Cruise import Cruise
+from src.Clasesships import Ship
+from src.Clasesships import Cargo
+from src.Clasesships import Cruise
 from src.LecturaArch import LecturaArch
 
 def main() -> None:
