@@ -1,6 +1,5 @@
 from src.Ship import Ship
 
-
 class Cruise(Ship):
    
     def __init__(self, passengers, draft, crew):
@@ -9,7 +8,7 @@ class Cruise(Ship):
        
 
     def is_worth_it(self)->float:
-        Final_Weight = self.draft - (self.crew * 1.5)  - (self.passengers * 2.25)
+        Final_Weight = float(self.draft) - (float(self.crew) * 1.5) - (float(self.passengers) * 2.25)
         
         if Final_Weight > 0:
              print(" Weight of the Cruise: ",Final_Weight)

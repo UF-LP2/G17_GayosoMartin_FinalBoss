@@ -1,3 +1,4 @@
+
 class Ship:
     contadorS = 0
     def __init__(self, draft, crew):
@@ -7,7 +8,7 @@ class Ship:
        
 
     def is_worth_it(self) ->float:
-        Final_Weight = self.draft - (self.crew * 1.5)
+        Final_Weight = float(self.draft) - (float(self.crew) * 1.5)
         if Final_Weight > 0:
              print("Weight of the Ship: ",Final_Weight)
         else :
@@ -18,6 +19,4 @@ class Ship:
         else: 
             raise ValueError("Menor a 20, no saquear")
         return Final_Weight
-
-
         

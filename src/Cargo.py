@@ -1,6 +1,5 @@
 from src.Ship import Ship
 
-
 class Cargo(Ship):
     
     def __init__(self, cargo, quality, draft, crew):
@@ -11,16 +10,16 @@ class Cargo(Ship):
         
 
     def is_worth_it(self)->float:
-        Final_Weight = self.draft - (self.crew * 1.5)
+        Final_Weight = float(self.draft) - (float(self.crew) * 1.5)
      
         if self.quality == 1:
-            Final_Weight = Final_Weight - 3.5
+            Final_Weight = Final_Weight - (3.5 * float(self.cargo))
 
         elif self.quality == (0.5):
-            Final_Weight = Final_Weight - 2
+            Final_Weight = Final_Weight - (2 * float(self.cargo))
 
         elif self.quality == (0.25):
-            Final_Weight = Final_Weight - 0.5
+            Final_Weight = Final_Weight - (0.5 * float(self.cargo))
         else:
             raise ValueError("Error de dato")
         

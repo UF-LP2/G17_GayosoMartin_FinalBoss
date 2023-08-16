@@ -3,7 +3,7 @@ import pytest
 
 def test_cargo():
     Cargo1 = Cargo(250, 0.5, 2000, 7)
-    assert Cargo1.is_worth_it() == 1987.5
+    assert Cargo1.is_worth_it() == 1489.5
 
 def test_Exception():
     Cargo2 = Cargo(79, 1, 150, 90)
